@@ -13,16 +13,14 @@ class student(models.Model):
      last_login=fields.Datetime()
      is_student=fields.Boolean()
      photo =fields.Image(max_width=200, max_height=200)
-#     value = fields.Integer()
-#     value2 = fields.Float(compute="_value_pc", store=True)
-#     description = fields.Text()
-#
-#     @api.depends('value')
-#     def _value_pc(self):
-#         for record in self:
-#             record.value2 = float(record.value) / 100
+     classroom=fields.Many2one("school.classroom")
 
+class classroom(models.Model):
+     _name='school.classroom'
+     _description='school.classroom' #Las Clases
 
+     name=fields.Char()
+     students=fields.One2many("school.student",'classroom')
 
 # class school(models.Model):
 #     _name = 'school.school'
