@@ -1,0 +1,109 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="devmeet.desarrollador_list">
+      <field name="name">devmeet.desarrollador list</field>
+      <field name="model">devmeet.desarrollador</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="dni"/>
+          <field name="name"/>
+          <field name="surname"/>
+          <field name="age"/>
+          <field name="photo"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="devmeet.tecnologia_list">
+      <field name="name">devmeet.tecnologia list</field>
+      <field name="model">devmeet.tecnologia</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="web"/>
+          <field name="logo"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="devmeet.evento_list">
+      <field name="name">devmeet.evento list</field>
+      <field name="model">devmeet.evento</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="ponente"/>
+          <field name="fecha_inicio"/>
+          <field name="fecha_fin"/>
+        </tree>
+      </field>
+    </record>
+
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="devmeet.action_desarrollador_window">
+      <field name="name">devmeet desarrollador window</field>
+      <field name="res_model">devmeet.desarrollador</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="devmeet.action_tecnologia_window">
+      <field name="name">devmeet tecnologia window</field>
+      <field name="res_model">devmeet.tecnologia</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="devmeet.action_evento_window">
+      <field name="name">devmeet evento window</field>
+      <field name="res_model">devmeet.evento</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="devmeet.action_server">
+      <field name="name">devmeet server</field>
+      <field name="model_id" ref="model_devmeet_devmeet"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+
+    <menuitem name="DevMeet" id="devmeet.menu_root"/>
+    
+    <!-- menu categories -->
+
+    <menuitem name="Gestion DevMeet" id="devmeet.menu_1" parent="devmeet.menu_root"/>
+
+<!--
+    <menuitem name="Menu 1" id="devmeet.menu_1" parent="devmeet.menu_root"/>
+    <menuitem name="Menu 2" id="devmeet.menu_2" parent="devmeet.menu_root"/>
+-->
+    <!-- actions -->
+
+    <menuitem name="Desarrolladores" id="devmeet.menu_desarrollador_list" parent="devmeet.menu_1"
+              action="devmeet.action_desarrollador_window"/>
+    <menuitem name="Tecnologias" id="devmeet.menu_tecnologia_list" parent="devmeet.menu_1"
+              action="devmeet.action_tecnologia_window"/>
+    <menuitem name="Eventos" id="devmeet.menu_evento_list" parent="devmeet.menu_1"
+              action="devmeet.action_evento_window"/>
+<!--
+    <menuitem name="List" id="school.menu_1_list" parent="school.menu_1"
+              action="school.action_window"/>
+    <menuitem name="Server to list" id="school" parent="school.menu_2"
+              action="school.action_server"/>
+-->
+  
+  </data>
+</odoo>
