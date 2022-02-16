@@ -33,7 +33,7 @@
       <field name="model">devmeet.evento</field>
       <field name="arch" type="xml">
         <tree>
-          <field name="ponente"/>
+          <field name="name"/>
           <field name="fecha_inicio"/>
           <field name="fecha_fin"/>
         </tree>
@@ -44,19 +44,19 @@
     <!-- actions opening views on models -->
 
     <record model="ir.actions.act_window" id="devmeet.action_desarrollador_window">
-      <field name="name">devmeet desarrollador window</field>
+      <field name="name">Desarrolladores</field>
       <field name="res_model">devmeet.desarrollador</field>
       <field name="view_mode">tree,form</field>
     </record>
 
     <record model="ir.actions.act_window" id="devmeet.action_tecnologia_window">
-      <field name="name">devmeet tecnologia window</field>
+      <field name="name">Tecnologias</field>
       <field name="res_model">devmeet.tecnologia</field>
       <field name="view_mode">tree,form</field>
     </record>
 
     <record model="ir.actions.act_window" id="devmeet.action_evento_window">
-      <field name="name">devmeet evento window</field>
+      <field name="name">Eventos</field>
       <field name="res_model">devmeet.evento</field>
       <field name="view_mode">tree,form</field>
     </record>

@@ -2,7 +2,7 @@
 
 from odoo import models, fields, api
 import secrets
-#excepcion warning
+#excepcion  warning
 #from odoo import _
 #falta una ----------------------------------------
 #para log
